@@ -30,8 +30,17 @@ yarn-error.*
 .DS_Store
 *.pem
 
-# local env files
+# Local env files
+.env
 .env*.local
+
+# Editor directories and files
+.vscode/
+.idea/
+
+# EAS Build
+eas-build-pre-upload.tar.gz
+.eas/
 
 # typescript
 *.tsbuildinfo

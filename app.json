@@ -1,41 +1,53 @@
 {
   "expo": {
-    "name": "app-final-tira-preco",
+    "name": "Smart Prices",
+    "description": "App de tirar preço de produtos de maneira inteligente.",
     "slug": "app-final-tira-preco",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "appfinaltirapreco",
+    "scheme": "app-final-tira-preco",
+    "splash": {
+      "image": "./assets/images/splash_screen.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#598E8A"
+    },
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.telheiro.smartprices",
+      "buildNumber": "1"
     },
     "android": {
+      "package": "com.telheiro.smartprice",
+      "versionCode": 1,
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/images/android-icon-foreground.png",
-        "backgroundImage": "./assets/images/android-icon-background.png",
-        "monochromeImage": "./assets/images/android-icon-monochrome.png"
+        "foregroundImage": "./assets/images/logo.png",
+        "backgroundColor": "#598E8A"
       },
+      "permissions": [],
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false
     },
     "web": {
-      "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "output": "static"
     },
     "plugins": [
       "expo-router",
       [
-        "expo-splash-screen",
+        "expo-camera",
         {
-          "image": "./assets/images/splash-icon.png",
-          "imageWidth": 200,
-          "resizeMode": "contain",
-          "backgroundColor": "#ffffff",
-          "dark": {
-            "backgroundColor": "#000000"
+          "cameraPermission": "Permitir que $(PRODUCT_NAME) acesse sua câmera para escanear códigos de barras."
+        }
+      ],
+      "./plugins/withAndroidAbiSplits.js",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "enableProguardInReleaseBuilds": true,
+            "enableShrinkResourcesInReleaseBuilds": true
           }
         }
       ]
@@ -43,6 +55,12 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "60df7373-a513-4fb5-807a-3c30c79c2897"
+      }
     }
   }
 }
